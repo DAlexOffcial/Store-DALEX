@@ -1,11 +1,11 @@
-<header class="shadow-xl fixed top-0 w-full bg-white">
+<header class="shadow-xl fixed top-0 w-full bg-white" style="z-index: 999;">
     <div class="container mx-auto flex items-center justify-between h-full">
         <div (click)="goToHome()" class="cursor-pointer">
             <img class="w-[50px]" src="../../../assets/clothes.svg" alt="">
         </div>
         <div (click)="stateNavbar()" class="cursor-pointer flex relative">
             <img src="../../../assets/bag.svg" alt="svg not found" class="w-10 h-10">
-            <div class="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
+            <div class="bg-red-500 absolute -left-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
                 {{amout}}
             </div>
         </div>
