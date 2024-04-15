@@ -1,0 +1,33 @@
+<div class="w-full bg-white fixed top-0 h-full shadow-xl
+md:w-[35vw] xl:max-w-[30vw] transition-all duration-300 z-20 px-4 
+lg:px-[35px]
+" [ngClass]="{
+    '-right-full': !Navbar,
+    'right-0': Navbar
+  }">
+  <div class="flex items-center justify-between py-6
+  border-b">
+    <div class="uppercase text-sm font-semibold">Shopping Bag ({{bag}})</div>
+    <div (click)="stateNavbar()" class="cursor-pointer flex justify-center items-center">
+      <img src="../../../assets/arrowRight.svg" alt="svg not found" class="w-8 h-8 ">
+    </div>
+  </div>
+  <div class="flex flex-col gap-y-2 h-[520px] lg:h-[640px] overflow-y-auto overflow-x-hidden border-b">
+    <div  *ngFor="let product of productsList">
+      <card-item [product]="product"></card-item>
+    </div>
+  </div>
+  <div class="flex flex-col gap-y-3 py-4
+  mt-4
+  ">
+    <div class="flex w-full justify-between items-center">
+      <div class="uppercase font-semibold">
+        <span class="mr-2">Total:</span>$ {{total | number:'1.2-2'}}
+      </div>
+  
+      <div (click)="cleanCard()" class="cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl">
+        <img src="../../../assets/trash.svg" alt="">
+      </div>
+    </div>
+  </div>
+</div>

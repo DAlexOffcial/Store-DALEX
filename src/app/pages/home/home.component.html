@@ -1,0 +1,14 @@
+<woman-section></woman-section>
+
+<section id="section1" class="py-16  flex items-center justify-center">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 
+            lg:grid-cols-4 xl:grid-cols-5 gap-[30px]
+            max-w-sm mx-auto md:max-w-none md:mx-0
+            ">
+            <div *ngFor="let product of products">
+                <Product [product]="product"></Product>
+            </div>
+        </div>
+    </div>
+</section>

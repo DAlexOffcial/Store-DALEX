@@ -1,0 +1,50 @@
+<div class="flex gap-x-4 py-2 lg:px-6  border-b
+border-gray-200 w-full font-light text-gray-500
+">
+    <div class="w-full min-h-[150px] flex items-center
+    gap-x-4
+    ">
+        <div (click)="onDetail()" >
+            <img class="max-w-[80px]" [src]="product?.image" alt="">
+        </div>
+        <div class="w-full flex flex-col">
+            <div class="flex justify-between mb-2">
+                <div class="text-sm uppercase font-medium 
+                max-w-[240px] text-black hover:underline cursor-pointer" 
+                (click)="onDetail()">{{product?.title}}
+                </div>
+                <div (click)="onDeleteItem(product)" class="text-xl cursor-pointer">
+                    <img class="text-gray-500 hover:text-red-500 transition" src="../../../assets/delete.svg" alt="">
+                </div>
+                
+            </div>
+            <div class="flex gap-x-2 h-[36px]
+            text-base
+            ">
+                <div class="flex flex-1 max-w-[100px]
+                 items-center h-full border
+                text-black font-medium 
+                ">
+                    <div (click)="onAmoutLess(product)" class="flex-1 h-full flex
+                    justify-center items-center cursor-pointer">
+                       <img src="../.../../../../assets/minus.svg" alt="">
+                    </div>
+                    <div class="h-full flex justify-center
+                    items-center px-2
+                    ">{{product?.amount}}</div>
+                    <div (click)="onAmoutMore(product)" class="flex-1 h-full flex
+                    justify-center items-center cursor-pointer
+                    ">
+                        <img src="../.../../../../assets/plus.svg" alt="">
+                     </div> 
+                </div>
+                <div class="flex-1 flex items-center
+                justify-around
+                ">$ {{product?.price}}</div>
+                <div class="flex-1 flex justify-end
+                items-center text-black font-medium
+                ">$ {{ (+product!.price * +product!.amount) | number:'1.2-2' }}</div>
+            </div>
+        </div>
+    </div>
+</div>

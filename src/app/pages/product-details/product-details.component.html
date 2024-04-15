@@ -1,0 +1,21 @@
+<div class="h-screen flex justify-center items-center" *ngIf="productDetail === undefined">
+    Loading...
+</div>
+
+<div *ngIf="productDetail !== undefined">
+  <section class="pt-32 pb-12 lg:py-32 h-screen flex items-center">
+    <div class="container mx-auto">
+      <div class="flex flex-col lg:flex-row items-center">
+        <div class="flex flex-1 justify-center items-center mb-8 lg:mb-0">
+            <img class="max-w-[200px] lg:max-w-sm" [src]="productDetail.image" alt="">
+        </div>
+        <div class="flex-1 text-center lg:text-left">
+            <h1 class="text-[26px] font-medium mb-2 max-w-[450px] mx-auto lg:mx-0">{{productDetail.title}}</h1>
+            <div class="text-xl text-red-500 font-medium mb-6">$ {{productDetail.price}}</div>
+            <p class="mb-8">{{productDetail.description}}</p>
+            <button (click)="addToCard()" class="bg-black py-4 px-8 text-white">Add to card</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
